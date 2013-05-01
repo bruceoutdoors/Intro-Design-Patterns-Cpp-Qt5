@@ -1,0 +1,42 @@
+1. What are the errors?
+    a. Not allowed here.
+    b. m_pointCount is missing here causing a compiler error.
+    c. Missing semicolon in the {}.
+    d. m_pointCount is missing here causing a runtime error.
+    e. Nothing is wrong.
+
+2. What are the errors?
+    a. Nothing is wrong.
+    b. m_printCount needs to be const.
+    c. m_printCount needs to be explicit.
+    d. Compiler error - can't change m_printCount.
+    e. m_printCount needs to be volatile.
+
+3. What is the error?
+    a. Nothing is wrong.
+    b. m_printCount needs to be volatile.
+    c. m_printCount needs to be const.
+    d. m_printCount needs to be mutable.
+    e. m_printCount needs to be explicit.
+
+4. What are the errors?
+    a. Can't call const member.
+    b. Can't call non-const member.
+    c. Nothing is wrong.
+    d. Set needs to be const.
+    e. Set needs to be volatile.
+
+5. What are the errors?
+    a. Can't call const member.
+    b. Can't call non-const member.
+    c. Set needs to be volatile.
+    d. q needs to be non-const.
+    e. Set needs to be volatile.
+
+6. What is the error?
+    a. Nothing is wrong.
+    b. Can't call non-const member.
+    c. print needs to be const.
+    d. q needs to be explicit.
+    e. Can't call const member.
+

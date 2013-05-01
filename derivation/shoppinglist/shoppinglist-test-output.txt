@@ -1,0 +1,11 @@
+src/derivation/shoppinglist>  ./shoppinglist
+The following list could be sent to the printer:
+
+
+[ ] Canned Goods - tomato juice - Qty: 4 cans
+[ ] Dairy - milk - Qty: 1 gal
+[ ] Frozen Foods - strawberry ice cream - Qty: 1/2  gal
+[ ] Household - air freshener - Qty: 1 can
+[ ] Household - dish detergent - Qty: 1 bottle
+[ ] Meats - hamburger - Qty: 1 lb
+src/derivation/shoppinglist> 

@@ -1,0 +1,6 @@
+namelist[0] = Apple
+namelist[1] = bear
+namelist[2] = CaT
+namelist[3] = dog
+namelist[4] = Dog
+StringList sorted: Apple, CaT, Dog, bear, dog

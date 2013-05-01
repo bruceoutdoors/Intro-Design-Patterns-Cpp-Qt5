@@ -1,0 +1,5 @@
+#!/bin/sh
+# Translates zen.xml into index.html.
+# Requires gnu xsltproc and docbook-xsl.
+# DOCBOOK=/usr/share/docbook-xsl
+xsltproc $DOCBOOK/html/onechunk.xsl zen.xml

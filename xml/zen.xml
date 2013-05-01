@@ -1,0 +1,38 @@
+<book>
+    <title>Zen Flesh, Zen Bones</title>
+    <chapter>
+        <title>101 Zen Stories</title>
+        <section>
+            <title>A cup of tea</title>
+            <para>Nan-in served a cup of tea.</para>
+        </section>
+        <section>
+            <title>Great Waves</title>
+            <para>
+            o-nami the wrestler sat in meditation and tried 
+            to imagine himself as a bunch of great waves.
+            </para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>The Gateless Gate</title>
+        <formalpara>
+            <title>The Gateless Gate</title> 
+            In order to enter the gateless gate, 
+            you must have a <emphasis role="strong">
+            mindless mind</emphasis>
+        </formalpara>
+        <section>
+            <title>Joshu's dog</title>
+            <para>Has a dog buddha nature or not?</para>
+        </section>
+        <section>
+            <title>Haykujo's Fox</title>
+            <formalpara role="remark">
+                <title>This is a special topic</title>
+                Which should have a role="remark" attribute
+            </formalpara>
+        </section>
+    </chapter>
+</book>
+

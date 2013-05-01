@@ -1,0 +1,9 @@
+src/ctorpoly> ./a.out
+in A ctor
+A's foo()
+in B ctor
+in C ctor
+After construction is complete:
+C's foo()
+src/ctorpoly>
+

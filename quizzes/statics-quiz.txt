@@ -1,0 +1,49 @@
+1. There are a number of problems with the code above.
+The first is that it will not link, because of a missing
+definition of m_wadgetCount. How do we fix that problem?
+
+    a. wadget.h inside class definition:
+        static int m_wadgetCount = 0;
+    b. wadget.h: outside class definition:
+        static int Wadget::m_wadgetCount = 0;
+    c. wadget.cpp: top of file
+        int Wadget::m_wadgetCount = 0;
+    d. wadget.cpp: top of file
+        static int Wadget::m_wadgetCount = 0;
+    e. wadget.cpp member initialization list:
+        Wadget::Wadget()
+        :  m_d1(a), m_d2(b), m_wadgetCount(0)
+            { m_wadgetCount ++; }
+
+}
+
+
+2. For the declaration of
+      static int Wadget::wadgetCount()
+   What does the static here mean?
+
+   a. function must be defined in a .cpp file
+   b. function can only be called on static objects
+   c. function must be called with Wadget:: scope resolution
+   d. function name has file scope
+   e. function can only access static members
+
+
+3. For the definition of
+      static int Wadget::wadgetCount()
+   What does the static here mean?
+   a. function can only access static members
+   b. function can only be called on static objects
+   c. function must be called with Wadget:: scope resolution
+   d. function name is exported to the linker
+   e. function name is not exported to the linker
+
+
+4. What can we say about the definition of Wadget::calculation()?
+
+   a. d1 and d2 are not accessible from the static method
+   b. missing a 'static' before the function definition
+   c. there is nothing wrong with this.
+   d. both a and b
+   e. function name is not exported to the linker (error)
+

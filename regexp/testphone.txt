@@ -1,0 +1,23 @@
+src/regexp> ./testphone 
+Enter a phone number (or q to quit): 16175738000
+ validated: (US/Canada) +1 617-573-8000
+Enter a phone number (or q to quit): 680111111111
+ validated: (Palau) + 680 (0)11-11-11-111
+Enter a phone number (or q to quit): 777888888888
+ validated: (Unknown - but possibly valid) + 777 (0)88-88-88-888
+Enter a phone number (or q to quit): 86333333333
+ validated: (China) + 86 (0)33-33-33-333
+Enter a phone number (or q to quit): 962444444444
+ validated: (Jordan) + 962 (0)44-44-44-444
+Enter a phone number (or q to quit): 56777777777
+ validated: (Chile) + 56 (0)77-77-77-777
+Enter a phone number (or q to quit): 351666666666
+ validated: (Portugal) + 351 (0)66-66-66-666
+Enter a phone number (or q to quit): 31888888888
+ validated: (Netherlands) + 31 (0)88-88-88-888
+Enter a phone number (or q to quit): 20398478
+Unknown format
+Enter a phone number (or q to quit): 2828282828282
+Unknown format
+Enter a phone number (or q to quit): q
+src/regexp> 

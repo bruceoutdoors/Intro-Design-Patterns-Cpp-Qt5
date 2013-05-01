@@ -1,0 +1,34 @@
+Changelog
+Release 2.0 - 2011-04-04
+
+   MetaData library no longer depends on phonon.
+   sqlmetadata does not depend on anything but metadata, and finds the correct metadataloader instance at runtime using the Abstract::MetaData interface.
+   The project files can be modified to switch between implementations of metadataloader at build-time
+   without code changes. 
+
+Release 1.1 - 2009-12-03
+
+   Overall, small changes in all libs to properly export the classes
+   in DLLs, for both both MSVC and MingW.
+
+   In dataobjects, I removed PropsMap, because QObject now supports
+   dynamic properties. Furthermore, DataObjectFactory is renamed to
+   QObjectFactory, newObject() returns QObject* instead of DataObject*, and
+   makes use of the new Qt 4.5 QMetaObject::newInstance() function and
+   Q_INVOKABLE macro.
+
+   There were a number of bugs I found and fixed in DataObjectTableModel
+   as I was using it in more ways from other programs.
+
+   The "metadata" library meant to replace "filetagger" and "mp3file" libraries.
+   It uses Phonon instead of id3lib. This means it has read-only access to
+   id3 tags.
+
+   Constraints are gone. We use QSortFilterProxy + model-view classes
+   instead. Constraints were written back in the Qt3 days before any
+   of the Model-View framework was available.
+
+   The "forms" library is obsolete and the material in the book that
+   references it is rewritten to use designer and QFormLayout instead.
+
+   xmlsupport.h/cpp are removed. We use Qt::escape to escape xml now.

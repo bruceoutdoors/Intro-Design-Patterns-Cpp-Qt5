@@ -1,0 +1,5 @@
+This program uses hierarchies for Shapes
+
+ RECTANGLE  Height = 4.1 Width = 5.2   area = 21.32
+ CIRCLE  Radius = 6.1   area = 116.899
+ SQUARE  Height = 5.1    area = 26.01

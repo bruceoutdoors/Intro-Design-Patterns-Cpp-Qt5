@@ -1,0 +1,16 @@
+# Relax-NC (compact version)
+start = object
+object =
+	element object {
+		attribute class { token },
+		attribute name { token },
+		property+
+	}
+property =
+	element property {
+		attribute name { token },
+		attribute type { token },
+		attribute value { string },
+		empty
+	}
+

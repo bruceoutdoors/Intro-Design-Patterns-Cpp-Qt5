@@ -1,0 +1,10 @@
+
+\section(id=xmlintro){    
+    \title{ Intro to XML }    
+    \para{ This is a paragraph }    
+    \ul{        
+        \li{ This is an unordered list item. }        
+        \li(c=textbook){ This only shows up in the textbook }    }    
+    \p{ Look at this example code below: }    
+    \include(src=xmlsamplecode.cpp){}}
+

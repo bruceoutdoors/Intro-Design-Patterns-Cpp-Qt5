@@ -1,0 +1,9 @@
+src/containers/qmap> ./qmap
+[0201633612]:Title: Design Patterns; Author: Gamma; ISBN: 0201633612; Year: 1995
+[0201700735]:Title: The C++ Programming Language; Author: Stroustrup; ISBN: 0201700735; Year: 1997
+[0321193687]:Title: UML Distilled; Author: Fowler; ISBN: 0321193687; Year: 2004
+[0596002920]:Title: XML in a Nutshell; Author: Harold; ISBN: 0596002920; Year: 2002
+Destroying TextbookMap ...
+After m has been destroyed we still have:
+Title: UML Distilled; Author: Fowler; ISBN: 0321193687; Year: 2004
+src/containers/qmap> 

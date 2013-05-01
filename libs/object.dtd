@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT object (property+)>
+<!ATTLIST object
+	class NMTOKEN #REQUIRED
+	name NMTOKEN #REQUIRED
+>
+<!ELEMENT property (EMPTY)>
+<!ATTLIST property
+	name NMTOKEN #REQUIRED
+	type NMTOKEN #REQUIRED
+	value CDATA #REQUIRED
+>

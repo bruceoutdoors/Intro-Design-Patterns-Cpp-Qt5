@@ -1,0 +1,30 @@
+Fixed Properties:
+objectName	d1
+someString	Washington
+Dynamic Properties:
+AcquiredProp	StringValue
+Fixed Properties:
+objectName	d2
+someString	
+Dynamic Properties:
+intProp	42
+realProp	3.14159
+dateProp	2012-01-04
+
+Now we save both objects to a file, close the file,
+reopen the file, read the data from the file, and use it
+to create new DynoProps objects.
+
+Here are the property inventories for the new objects.
+Fixed Properties:
+objectName	d1
+someString	Washington
+Dynamic Properties:
+AcquiredProp	StringValue
+Fixed Properties:
+objectName	d2
+someString	
+Dynamic Properties:
+intProp	42
+realProp	3.14159
+dateProp	2012-01-04

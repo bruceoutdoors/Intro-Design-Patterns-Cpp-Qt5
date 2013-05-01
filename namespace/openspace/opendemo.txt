@@ -1,0 +1,46 @@
+//File:  a.h"
+#ifndef _A_H_
+#define _A_H_
+
+#include <iostream>
+namespace A {
+  using namespace std;
+  void f() { cout << "f from A\n"; }
+  void g() { cout << "g from A\n"; }
+}
+#endif
+
+//File:  new-a.h
+#ifndef NEW_A_H_
+#define NEW_A_H_
+#include <iostream>
+
+namespace A {
+  //void k() { h(); }                      /* Error! */
+  //void g() { cout << "Redefine g()/n"; } /* Error! */
+  void h() { 
+    cout << "h from newA\n";
+    g();
+  }
+}
+#endif
+
+File: opendemo.cpp
+#include "a.h"
+#include "new-a.h"
+
+int main() {
+  using namespace A;
+  f();
+  h();
+}
+
+/*Run
+
+openspace> ./a.out
+f from A
+h from newA
+g from A
+openspace>
+
+*/

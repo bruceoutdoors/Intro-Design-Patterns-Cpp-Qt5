@@ -1,0 +1,13 @@
+Using qlonglong:
+
+Times in miliseconds:
+#primes         1        2       3       4   (Mutex threads)
+ 664579      18420    9386    6678    9771
+5761454     481039  243352  152380  126328      
+
+#primes         1       2      3        4   (Pooled concurrent in-place filter())
+664579      18512    8981   5855     4981
+5761454     480870  242165  152090  116508
+
+
+

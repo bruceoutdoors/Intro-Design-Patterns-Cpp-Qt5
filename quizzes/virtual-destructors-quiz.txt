@@ -1,0 +1,14 @@
+
+1. What is the output from the first call to showCounts()?
+    a. 4 3
+    b. 3 2
+    c. 2 2
+    d. 1 1
+    e. 3 4
+
+2. What is the output of the second call to showCounts()?
+    a. 1 2
+    b. 1 1
+    c. 0 0
+    d. 2 2
+    e. 2 1

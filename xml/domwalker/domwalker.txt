@@ -1,0 +1,40 @@
+
+---> Before:
+ <section id="xmlintro" >
+ <title> Intro to XML </title>
+ <p> This is a paragraph </p>
+ <ul>
+  <li> This is an unordered list item. </li>
+  <li c="textbook" > This only shows up in the textbook </li>
+ </ul>
+ <p> The code example below shows how
+         slacker processes includes: </p>
+ <include mode="cpp" src="testhello.cpp" />
+ <p> And here is another paragraph </p>
+</section>
+
+--->After:
+ <section id="xmlintro" >
+ <title> Intro to XML </title>
+ <para> This is a paragraph </para>
+ <unorderedlist>
+  <listitem>
+   <para> This is an unordered list item. </para>
+  </listitem>
+  <listitem>
+   <para condition="textbook" role="textbook" c="0" > This only shows up in the textbook </para>
+  </listitem>
+ </unorderedlist>
+ <para> The code example below shows how
+         slacker processes includes: </para>
+ <programlisting>#include &lt;stdio.h>
+int main(int argc, char** argv) {
+    printf (&quot;Hello World&quot;);
+    for (int i=0; i &lt; 10; ++i) {
+        j = i &amp;&amp; i;
+    }
+    return 0;
+}
+</programlisting>
+ <para> And here is another paragraph </para>
+</section>

@@ -1,0 +1,13 @@
+Customer {
+   Id=834
+   DateEstablished=2004-01-01
+   Type=Corporate
+   objectName=Bilbo
+   USAddress {
+       Line1=the shire
+       Line2=middle earth
+       City=victoria
+       Phone=123
+       addressName=home
+   }
+}

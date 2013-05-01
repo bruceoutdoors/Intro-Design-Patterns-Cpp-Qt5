@@ -1,0 +1,25 @@
+
+<object class="CustomerList" name="Customers" >
+
+   <object class="Customer" name="Simon" >
+     <property name="Name" type="QString" value="Simon" />
+     <property name="Date" type="QDate" value="1963-11-22" />
+     <property name="LuckyNumber" type="int" value="834" />
+     <property name="State" type="QString" value="WA" />
+     <property name="Zip" type="QString" value="12345" />
+     <property name="FavoriteFood" type="QString" value="Donuts" />
+     <property name="FavoriteDrink" type="QString" value="YooHoo"/>
+   </object>
+
+
+   <object class="Customer" name="Raja" >
+     <property name="Name" type="QString" value="Raja" />
+     <property name="Date" type="QDate" value="1969-06-15" />
+     <property name="LuckyNumber" type="int" value="62" />
+     <property name="State" type="QString" value="AZ" />
+     <property name="Zip" type="QString" value="54321" />
+     <property name="FavoriteFood" type="QString" value="Mushrooms" />
+     <property name="FavoriteDrink" type="QString" value="Jolt" />
+   </object>
+
+</object>

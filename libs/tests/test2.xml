@@ -1,0 +1,19 @@
+
+<object class="PropsMap" name="unnamed" >
+
+   <object class="Customer" name="first customer" >
+     <property name="Name" type="QString" value="first customer" />
+     <property name="Id" type="QString" value="111111111" />
+     <property name="DateEstablished" type="QDate" value="2003-11-21" />
+     <property name="Type" type="QCString" value="Educational" />
+   </object>
+
+
+   <object class="Customer" name="second customer" >
+     <property name="Name" type="QString" value="second customer" />
+     <property name="Id" type="QString" value="2222222" />
+     <property name="DateEstablished" type="QDate" value="2003-05-16" />
+     <property name="Type" type="QCString" value="Government" />
+   </object>
+
+</object>

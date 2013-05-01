@@ -1,0 +1,27 @@
+
+<object class="Customer" name="Bilbo Baggins" >
+  <property name="Id" type="QString" value="NEWID1234" />
+  <property name="DateEstablished" type="QDate" value="2004-09-01" />
+  <property name="Type" type="QString" value="Educational" />
+
+   <object class="UsAddress" name="" >
+     <property name="Line1" type="QString" value="123 Sunnyside Street" />
+     <property name="Line2" type="QString" value="Apartment 9W" />
+     <property name="City" type="QString" value="Hobbitshire" />
+     <property name="Phone" type="QString" value="(876) 543-2109" />
+     <property name="State" type="QString" value="WA" />
+     <property name="Zip" type="QString" value="12345" />
+   </object>
+
+
+   <object class="CanadaAddress" name="default" >
+     <property name="Line1" type="QString" value="666 Shelob's Cave" />
+     <property name="Line2" type="QString" value="Sticky Web 45" />
+     <property name="City" type="QString" value="Mordor" />
+     <property name="Phone" type="QString" value="(654) 321-0987" />
+     <property name="Province" type="QString" value="BC" />
+     <property name="PostalCode" type="QString" value="A1B 2C4" />
+   </object>
+
+</object>
+

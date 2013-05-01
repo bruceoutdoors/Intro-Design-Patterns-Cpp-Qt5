@@ -1,0 +1,18 @@
+********* Start testing of TestCustomerProps *********
+Config: Using QTest library 4.6.2, Qt 4.6.2
+PASS   : TestCustomerProps::initTestCase()
+QDEBUG : TestCustomerProps::test() "class CustProps : public QObject {
+  QString objectName = Customer;
+  QString id = anotherId;
+  QString name = Falafal Pita;
+  QString address = 41 Temple Street; Boston, MA; 02114;
+  QString phone = 617-555-1212;
+  QDate dateEstablished = 2003-07-15;
+  CustomerType type = 3;
+};" 
+QDEBUG : TestCustomerProps::test()  Educational= 2 
+QDEBUG : TestCustomerProps::test()  Bogus=  -1 
+PASS   : TestCustomerProps::test()
+PASS   : TestCustomerProps::cleanupTestCase()
+Totals: 3 passed, 0 failed, 0 skipped
+********* Finished testing of TestCustomerProps *********

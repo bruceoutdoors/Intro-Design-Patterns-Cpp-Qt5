@@ -1,0 +1,43 @@
+1. Which method is called?
+   a. Shape::draw()
+   b. Square::draw()
+   c. error - method is hidden
+   d. error - method is inaccessible
+   e. error - no such method
+
+2. Which method is called?
+   a. Shape::draw()
+   b. Square::draw()
+   c. error - method is hidden
+   d. error - method is inaccessible
+   e. error - no such method
+
+3. Which method is called?
+   a. Shape::draw()
+   b. Square::draw()
+   c. error - method is hidden
+   d. error - method is inaccessible
+   e. error - no such method
+
+4. Which method is called?
+   a. Shape::draw()
+   b. Square::draw()
+   c. error - method is hidden
+   d. error - method is inaccessible
+   e. error - no such method
+
+5. Which method is called?
+   a. Shape::draw()
+   b. Square::draw()
+   c. error - method is hidden
+   d. error - method is inaccessible
+   e. error - no such method
+
+6. Which method is called?
+   a. Shape::draw()
+   b. Square::draw()
+   c. error - method is hidden
+   d. error - method is inaccessible
+   e. error - no such method
+
+

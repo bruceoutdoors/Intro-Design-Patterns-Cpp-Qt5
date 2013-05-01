@@ -1,0 +1,11 @@
+<section id="xmlintro">
+    <title> Intro to XML </title>
+    <para> This is a paragraph </para>
+    <ul>
+        <li> This is an unordered list item. </li>
+        <li c="textbook"> This only shows up in the textbook </li>
+    </ul>
+    <p> Look at this example code below: </p>
+    <include src="xmlsamplecode.cpp" mode="cpp"/>
+</section>
+

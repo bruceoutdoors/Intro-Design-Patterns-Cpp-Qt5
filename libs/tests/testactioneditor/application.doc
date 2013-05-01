@@ -1,0 +1,37 @@
+/*
+$Id$
+*/
+     
+/*! \page qaction-application-example.html
+
+  \ingroup qaction-examples
+
+
+  \title A Complete Application Window with Actions
+
+  The QAction class provides a way of associating user input from different
+  user interface elements with abstract high level actions. This approach makes
+  it easy to customize applications for different types of users.
+
+  This example program is just like the
+  <a href="simple-application-example.html">application example</a>,
+  but uses QAction to build the menu and the toolbar.
+
+  <hr>
+
+  Header file:
+
+  \include action/application.h
+
+  <hr>
+
+  Implementation:
+
+  \include action/application.cpp
+
+  <hr>
+
+  Main:
+
+  \include action/main.cpp
+*/   

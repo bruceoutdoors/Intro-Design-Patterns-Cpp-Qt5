@@ -1,0 +1,16 @@
+Times are in miliseconds on an Intel Core 2 Quad running linux x64  
+        int:
+#primes         1           2        3          4        5      
+ 664579         5157      3573     7316     14552        (mutex)      
+ 664579         4844      2582     1748      1350        (pool)
+ 5761455      128329     68431    60188    106957   180111  (mutex)
+ 5761455      122216     61325    39519     32163    32313  (pool) 
+
+        qlonglong:
+#primes         1        2       3       4      # threads   
+664579       18420    9386    6678    9771      (Mutex)
+664579       18512    8981    5855    4981      (pool)
+5761455     481039  243352  152380  126328      (Mutex)
+5761455     480870  242165  152090  116508      (pool)
+
+[TODO: Replace this with a pretty chart]

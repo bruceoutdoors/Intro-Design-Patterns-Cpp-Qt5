@@ -1,0 +1,34 @@
+
+<object class="CustomerList" name="unnamed" >
+
+   <object class="Customer" name="Wesley Clarke" >
+     <property name="Name" type="QString" value="Wesley Clarke" />
+     <property name="Id" type="QString" value="10101" />
+     <property name="DateEstablished" type="QDate" value="2000-02-13" />
+     <property name="Type" type="QCString" value="Government" />
+   </object>
+
+
+   <object class="Customer" name="Howard Dean" >
+     <property name="Name" type="QString" value="Howard Dean" />
+     <property name="Id" type="QString" value="232323" />
+     <property name="DateEstablished" type="QDate" value="2000-03-13" />
+     <property name="Type" type="QCString" value="Educational" />
+   </object>
+
+
+   <object class="Customer" name="John Kerry" >
+     <property name="Name" type="QString" value="John Kerry" />
+     <property name="Id" type="QString" value="34343" />
+     <property name="DateEstablished" type="QDate" value="1999-05-09" />
+     <property name="Type" type="QCString" value="Corporate" />
+   </object>
+
+   <object class="Customer" name="Dennis Kusinich" >
+     <property name="Name" type="QString" value="Dennis Kusinich" />
+     <property name="Id" type="QString" value="56565" />
+     <property name="DateEstablished" type="QDate" value="2002-05-17" />
+     <property name="Type" type="QCString" value="Individual" />
+   </object>
+
+</object>

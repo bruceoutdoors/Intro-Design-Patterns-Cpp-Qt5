@@ -1,0 +1,69 @@
+# Exerpts from a makefile
+
+####### Compiler, tools and options
+
+CC            = gcc     # executable for C compiler
+CXX           = g++     # executable  for c++ compiler
+LINK          = g++     # executable for linker
+
+# flags that get passed to the compiler
+CFLAGS        = -pipe -g -Wall -W -D_REENTRANT $(DEFINES)
+CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT $(DEFINES)
+INCPATH       = -I/usr/local/qt/mkspecs/default -I. \
+                -I$(QT4)/include/QtGui -I$(QT4)/include/QtCore \
+                -I$(QT4)/include
+
+# Linker flags
+LIBS          = $(SUBLIBS) -L$(QT4)/lib -lQtCore_debug -lQtGui_debug -lpthread
+LFLAGS        = -Wl,-rpath,$(QT4)/lib
+
+# macros for performing other operations as part of build steps:
+QMAKE         = /usr/local/qt/bin/qmake
+
+####### Files
+
+HEADERS       =    # If we had some, they'd be here. 
+SOURCES       = main.cpp
+OBJECTS       = main.o
+[snip]
+QMAKE_TARGET  = qapp
+DESTDIR       = 
+TARGET        = qapp  # default target to build
+
+first: all            # to build "first" we must build "all"
+
+####### Implicit rules
+
+.SUFFIXES: .c .o .cpp .cc .cxx .C
+
+.cpp.o:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
+
+## Possible targets to build
+
+all: Makefile $(TARGET)  # this is how to build "all"
+
+$(TARGET):  $(OBJECTS) $(OBJMOC)    # this is how to build qapp
+	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJMOC) $(OBJCOMP) \
+    $(LIBS)
+
+        qmake:  FORCE               # "qmake" is a target too! 
+	@$(QMAKE) -o Makefile qapp.pro  # what does it do?
+
+dist:                               # Another target 
+	@mkdir -p .tmp/qapp \
+    && $(COPY_FILE) --parents $(SOURCES) $(HEADERS) \ 
+       $(FORMS) $(DIST) .tmp/qapp/ \ 
+    &&  (cd `dirname .tmp/qapp` \ && $(TAR) qapp.tar qapp \ 
+         && $(COMPRESS) qapp.tar) \ 
+    && $(MOVE) `dirname .tmp/qapp`/qapp.tar.gz . \ 
+    && $(DEL_FILE) -r .tmp/qapp
+
+clean:compiler_clean                # yet another target
+	-$(DEL_FILE) $(OBJECTS)
+	-$(DEL_FILE) *~ core *.core
+
+
+####### Dependencies for implicit rules
+
+main.o: main.cpp 
