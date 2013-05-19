@@ -34,7 +34,7 @@ QString DataObject::validInputs(QString propertyName) const {
 */
 //start id="setproperty"
 bool DataObject::setProperty(const QString& propertyName, const QVariant &value) {
-    return QObject::setProperty(propertyName.toAscii(), value);
+    return QObject::setProperty(propertyName.toLatin1(), value);
 }
 //end
 bool DataObject::setProperty(const char* propName, const QVariant& qv) {
@@ -156,7 +156,7 @@ uint DataObject::numProperties() const {
 
 QMetaProperty DataObject::metaProperty(const QString& propname) const {
     const QMetaObject* meta = this->metaObject();
-    int i = meta->indexOfProperty(propname.toAscii());
+    int i = meta->indexOfProperty(propname.toLatin1());
     return meta->property(i);
 }
 
@@ -164,7 +164,7 @@ QMetaProperty DataObject::metaProperty(int i) const {
     return metaObject()->property(i);
 }
 QVariant DataObject::property ( QString name ) const {
-    return QObject::property(name.toAscii());
+    return QObject::property(name.toLatin1());
 }
 
 QVariant DataObject::property (const char* name ) const {
@@ -194,7 +194,7 @@ bool DataObject::writeTo(QObject& dest) const {
     foreach (const QString &propname, propertyNames()) {
         if (metaProperty(propname).isWritable()) {
             QVariant val = property(propname);
-            result = dest.setProperty(propname.toAscii(), val) && result;
+            result = dest.setProperty(propname.toLatin1(), val) && result;
         }
     }
     return result;

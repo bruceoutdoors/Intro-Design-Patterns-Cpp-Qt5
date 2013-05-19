@@ -27,7 +27,7 @@ QString Country::toString() const {
 Country::Country(const QString& string) {
     const QMetaProperty mp(metaProperty("val"));
     QMetaEnum qmen = mp.enumerator();
-    m_Val = static_cast<CountryType>(qmen.keyToValue(string.toAscii()));
+    m_Val = static_cast<CountryType>(qmen.keyToValue(string.toLatin1()));
 }
 
 /**

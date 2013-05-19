@@ -60,7 +60,7 @@ bool QObjectReader::startElement( const QString&,
         QString fieldName = atts.value("name");
         QString fieldValue = atts.value("value");
         QVariant qv = QVariant(fieldValue);
-        m_Current->setProperty(fieldName.toAscii(), qv);
+        m_Current->setProperty(fieldName.toLatin1(), qv);
 
     }
     return true;

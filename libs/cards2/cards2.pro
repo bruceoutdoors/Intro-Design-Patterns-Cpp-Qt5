@@ -1,7 +1,7 @@
 include (../libs.pri)
 
 TEMPLATE = lib
-QT += gui
+QT += widgets
 
 # For locating the files.
 RESOURCES = cards2.qrc

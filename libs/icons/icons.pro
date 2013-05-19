@@ -1,5 +1,5 @@
 include (../libs.pri)
-
+QT += widgets
 TEMPLATE = lib
 win32 {
     DEFINES += ICONS_DLL

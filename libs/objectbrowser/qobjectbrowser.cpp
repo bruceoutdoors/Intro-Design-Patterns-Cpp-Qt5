@@ -118,7 +118,7 @@
 	}
 	void QObjectBrowserControl::set_children() {
         ui->children_table->clear();
-        ui->children_table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+        ui->children_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->children_table->setColumnCount(2);
         ui->children_table->setHorizontalHeaderLabels(QStringList() << tr("Type") << tr("Name") );
 
@@ -151,7 +151,7 @@
 	}
 	void QObjectBrowserControl::set_properties() {
         ui->properties_table->clear();
-        ui->properties_table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+        ui->properties_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->properties_table->setColumnCount(3);
         ui->properties_table->setHorizontalHeaderLabels(QStringList() << tr("Type") << tr("Name") << tr("Value"));
 
@@ -186,7 +186,7 @@
 	void QObjectBrowserControl::set_signals() {
         ui->signals_table->clear();
 		clear_signal_records();
-        ui->signals_table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+        ui->signals_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->signals_table->setColumnCount(2);
         ui->signals_table->setHorizontalHeaderLabels(QStringList() << tr("Signal") << tr("Count")); // << tr("Connects"));
 
@@ -216,13 +216,13 @@
                 ptr->m_sigmapper=new QSignalMapper;
                 ptr->m_sigmapper->setMapping(m_obj,ct);
 				char holdstr[1000];
-				sprintf(holdstr,"2%s",meth.signature());
+                sprintf(holdstr,"2%s",meth.methodSignature().data());
                 connect(m_obj,holdstr,ptr->m_sigmapper,SLOT(map()));
                 connect(ptr->m_sigmapper,SIGNAL(mapped(int)),this,SLOT(on_signal_triggered(int)));
                 m_signal_records.append(ptr);
 
 				item=new QTableWidgetItem;
-				item->setText(meth.signature());
+                item->setText(meth.methodSignature());
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
                 ui->signals_table->setItem(ct,0,item);
                 // TODO: setItem (ct, 2, new item that shows the number of connections )
@@ -262,7 +262,7 @@
 	}
 	void QObjectBrowserControl::set_slots() {
         ui->slots_table->clear();
-        ui->slots_table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+        ui->slots_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->slots_table->setColumnCount(2);
         ui->slots_table->setHorizontalHeaderLabels(QStringList() << "Type" << "Slot");
 
@@ -292,7 +292,7 @@
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
                 ui->slots_table->setItem(ct,0,item);
 				item=new QTableWidgetItem;
-				item->setText(meth.signature());
+                item->setText(meth.methodSignature());
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
                 ui->slots_table->setItem(ct,1,item);
 
@@ -302,7 +302,7 @@
 	}
 	void QObjectBrowserControl::set_methods() {
         ui->methods_table->clear();
-        ui->methods_table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+        ui->methods_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->methods_table->setColumnCount(2);
         ui->methods_table->setHorizontalHeaderLabels(QStringList() << "Type" << "Slot");
 
@@ -328,7 +328,7 @@
                 ui->methods_table->setItem(ct,0,item);
 
 				item=new QTableWidgetItem;
-				item->setText(meth.signature());
+                item->setText(meth.methodSignature());
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
                 ui->methods_table->setItem(ct,1,item);
 

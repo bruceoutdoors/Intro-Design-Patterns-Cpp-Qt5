@@ -38,7 +38,8 @@ toString(const QVariant& val, const QMetaProperty& mprop) const {
     QString result;
     QVariant::Type t = mprop.type();
     if (t == QVariant::Time) {
-        QTime t = qVariantValue<QTime>(val);
+//        QTime t = qVariantValue<QTime>(val);
+        QTime t = val.value<QTime>();
         if (t.hour() > 0) {
             return t.toString("hh:mm:ss");
         }
@@ -70,9 +71,11 @@ toString(const QVariant& val, const QMetaProperty& mprop) const {
     else if (m_vwriter != 0 && result == QString())
         result = m_vwriter->toString(val, mprop);
     if (result == QString())
-        result = Qt::escape(val.toString());
+//        result = Qt::escape(val.toString());
+        result = QString(val.toString()).toHtmlEscaped();
     else
-        result = Qt::escape(result);
+//        result = Qt::escape(result);
+        result = QString(result).toHtmlEscaped();
     return result;
 }
 //start
@@ -86,14 +89,14 @@ toString(const QObject* obj, int indentLevel) const {
     QStringList propnames = propertyNames(obj);
     foreach (const QString &propName, propnames) {
         if (propName == "objectName") continue;
-        QVariant qv = obj->property(propName.toAscii());
+        QVariant qv = obj->property(propName.toLatin1());
 
         if (propName == "className") {
                className = qv.toString();
                continue;
         }
         const QMetaObject* meta = obj->metaObject();
-        int idx = meta->indexOfProperty(propName.toAscii());
+        int idx = meta->indexOfProperty(propName.toLatin1());
         QMetaProperty mprop = meta->property(idx);
 
         result <<
@@ -103,8 +106,10 @@ toString(const QObject* obj, int indentLevel) const {
     }
     /* Query over QObjects */
     if (m_children) {
-        QList<QObject*> childlist = 
-               qFindChildren<QObject*>(obj, QString());
+//        QList<QObject*> childlist =
+//               qFindChildren<QObject*>(obj, QString());
+        QList<QObject*> childlist =
+               obj->findChildren<QObject*>(QString());
 
         foreach (const QObject* child, childlist) {
             if (child->parent() != obj) {

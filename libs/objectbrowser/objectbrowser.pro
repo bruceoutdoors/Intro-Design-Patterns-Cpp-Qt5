@@ -1,5 +1,5 @@
 include (../libs.pri)
-
+QT += widgets
 TEMPLATE = lib
 DEPENDPATH += .
 INCLUDEPATH += .

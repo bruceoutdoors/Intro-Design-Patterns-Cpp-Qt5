@@ -2,7 +2,7 @@ include (../libs.pri)
 TEMPLATE=lib
 
 # We need this in order to find XML header files.
-QT += xml
+QT += xml widgets
 
 # Input
 HEADERS += address.h \

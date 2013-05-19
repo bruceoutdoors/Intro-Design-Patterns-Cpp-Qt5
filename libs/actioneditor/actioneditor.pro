@@ -1,4 +1,5 @@
 include (../libs.pri)
+QT += widgets
 TEMPLATE = lib
 HEADERS = actiontableeditor.h \
     actioneditordialog.h \

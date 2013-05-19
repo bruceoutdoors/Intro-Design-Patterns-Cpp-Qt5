@@ -1,4 +1,4 @@
-CPPLIBS=$$(CPPLIBS)
+CPPLIBS=C:\Qt\Qt5.0.2\5.0.2\mingw47_32\lib
 isEmpty(CPPLIBS) {
     error("You should define CPPLIBS environment variable to point to this location.")
 }
@@ -8,14 +8,14 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS += dataobjects \
-           metadata \
+#           metadata \
            actioneditor \
            icons \
-           phononmetadata \
-           sqlmetadata \
+#           phononmetadata \
+#           sqlmetadata \
            docbook \
            cards2 \
-           customer \
+#           customer \
            objectbrowser
 
 
@@ -28,4 +28,4 @@ USE_TAGLIB=$$(USE_TAGLIB)
     SUBDIRS += filetagger
 }
 
-SUBDIRS += tests
+#SUBDIRS += tests
