@@ -15,7 +15,7 @@ SUBDIRS += dataobjects \
 #           sqlmetadata \
            docbook \
            cards2 \
-#           customer \
+           customer \
            objectbrowser
 
 

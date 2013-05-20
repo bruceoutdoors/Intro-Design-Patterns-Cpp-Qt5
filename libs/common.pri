@@ -1,7 +1,7 @@
 # common settings for testcases in libs
 CONFIG += debug
 
-CPPLIBS=C:\Qt\Qt5.0.2\5.0.2\mingw47_32\lib
+CPPLIBS=C:/Qt/Qt5.0.2/5.0.2/mingw47_32/lib
 isEmpty( CPPLIBS ) {
     error("You need to define CPPLIBS environment variable.")
 }
