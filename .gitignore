@@ -1,0 +1,5 @@
+*.exe
+*.bat
+*.user
+*.o
+build-*/
