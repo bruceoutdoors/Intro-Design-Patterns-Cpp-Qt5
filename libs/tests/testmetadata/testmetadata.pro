@@ -5,8 +5,8 @@ LIBS += -ldataobjects -lmetadata \
 
 INCLUDEPATH += $$(CPPLIBS)/utils $$(CPPLIBS)/metadata $$(CPPLIBS)/dataobjects $$(CPPLIBS)/phononmetadata
 
-CONFIG += qtestlib debug
-QT += phonon
+CONFIG += debug
+QT += phonon testlib
 
 
 TEMPLATE = app

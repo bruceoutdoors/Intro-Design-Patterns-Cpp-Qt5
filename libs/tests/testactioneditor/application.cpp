@@ -1,8 +1,7 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "actiontableeditor.h"
 #include "qobjectbrowser.h"
 #include "application.h"
-#include "fileprint.xpm"
 
 ApplicationWindow::ApplicationWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -62,7 +61,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
              SLOT( saveAs() ) );
     fileSaveAsAction->setWhatsThis( fileSaveText );
 
-    filePrintAction = new QAction( QIcon(fileprint), "&Print...", this);
+    filePrintAction = new QAction( QIcon(":/fileprint.xpm"), "&Print...", this);
     filePrintAction->setShortcut(tr("Ctrl+p"));
 
     connect( filePrintAction, SIGNAL( activated() ) , this,

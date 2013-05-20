@@ -8,13 +8,11 @@ INCLUDEPATH += $$(CPPLIBS)/dataobjects \
     $$(CPPLIBS)/metadata 
 
 
-QT += xml sql phonon
+QT += xml sql phonon testlib
 
 
 DEPENDPATH += ../testmetadata
 INCLUDEPATH += ../testmetadata
-
-CONFIG += qtestlib
 
 SOURCES += testsqlmetadata.cpp testtracks.cpp
 HEADERS += testsqlmetadata.h testtracks.h

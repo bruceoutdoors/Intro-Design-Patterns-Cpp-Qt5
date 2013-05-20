@@ -1,10 +1,12 @@
 include (../../common.pri)
 
-INCLUDEPATH	+= $$(CPPLIBS)/dataobjects $$(CPPLIBS)/customer
-LIBS += -ldataobjects -lcustomer -L$$(CPPLIBS)
+INCLUDEPATH +=  ../../dataobjects \
+                ../../customer
+LIBS += -ldataobjects -lcustomer -L$$CPPLIBS
 
-CONFIG += qtestlib
-QT += xml
+# qtestlib is deprecated
+#CONFIG += qtestlib
+QT += xml testlib
 
 HEADERS += testcustomer.h testcustomerlist.h
 SOURCES += testcustomer.cpp testcustomerlist.cpp

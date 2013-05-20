@@ -1,6 +1,6 @@
 #include "activity.h"
 #include "activityitem.h"
-#include <QtGui>
+#include <QtWidgets>
 
 
 /* Demo of spinny activity buttons */

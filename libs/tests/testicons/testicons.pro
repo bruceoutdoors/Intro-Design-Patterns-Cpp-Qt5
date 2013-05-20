@@ -1,7 +1,8 @@
 include (../../common.pri)
+QT += widgets
 CONFIG += debug
-INCLUDEPATH += $$(CPPLIBS)/icons
-LIBS += -licons
+INCLUDEPATH += ../../icons
+LIBS += -L$$CPPLIBS -licons
 
 # Input
 SOURCES += testicons.cpp

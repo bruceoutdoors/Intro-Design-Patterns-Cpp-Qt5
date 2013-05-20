@@ -1,7 +1,7 @@
 include (../../common.pri)
 
-QT += xml
-CONFIG += qtestlib debug
+QT += xml testlib
+CONFIG += debug
 
 HEADERS += testprops.h
 SOURCES += testprops.cpp

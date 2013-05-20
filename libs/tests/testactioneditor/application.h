@@ -3,6 +3,7 @@
 #define APPLICATION_H
 
 #include <qmainwindow.h>
+#include <QPrinter>
 
 class QDialog;
 class QTextEdit;

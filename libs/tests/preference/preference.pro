@@ -1,10 +1,11 @@
 include (../../common.pri)
-INCLUDEPATH	+= $$(CPPLIBS)/dataobjects $$(CPPLIBS)/metadata
-LIBS += -ldataobjects -lmetadata -L$$(CPPLIBS)
+INCLUDEPATH	+= ../../dataobjects \
+                    ../../metadata
+LIBS += -ldataobjects -lmetadata -L$$CPPLIBS
 
-CONFIG += qtestlib
+QT += testlib
 TEMPLATE = app
-TARGET =
+TARGET = preference
 DEPENDPATH += .
 INCLUDEPATH += .
 
