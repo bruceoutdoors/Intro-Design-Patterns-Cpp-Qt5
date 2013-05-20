@@ -1,13 +1,14 @@
-include (../libs.pri)
+#include (../libs.pri)
 TEMPLATE = lib
+QT += widgets
 
 win32 {
     DEFINES += METADATA_DLL
 }
 
-LIBS += -ldataobjects 
-
-INCLUDEPATH += . ../dataobjects
+#LIBS += -ldataobjects
+win32: LIBS += -L$$PWD/../../build-libs-Qt_5_0_2-Debug/dataobjects/debug/ -ldataobjects
+INCLUDEPATH += ../dataobjects
 
 # Input
 HEADERS += preference.h \

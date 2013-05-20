@@ -8,7 +8,7 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS += dataobjects \
-#           metadata \
+           metadata \
            actioneditor \
            icons \
 #           phononmetadata \

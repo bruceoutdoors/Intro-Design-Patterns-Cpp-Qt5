@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "abstractmetadataloader.h"
 #include "metadataloaderprogresswidget.h"
 
