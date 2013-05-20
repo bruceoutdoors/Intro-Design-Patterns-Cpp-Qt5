@@ -1,4 +1,4 @@
-#include (../libs.pri)
+include (../libs.pri)
 TEMPLATE = lib
 QT += widgets
 
@@ -6,8 +6,7 @@ win32 {
     DEFINES += METADATA_DLL
 }
 
-#LIBS += -ldataobjects
-win32: LIBS += -L$$PWD/../../build-libs-Qt_5_0_2-Debug/dataobjects/debug/ -ldataobjects
+LIBS += -ldataobjects
 INCLUDEPATH += ../dataobjects
 
 # Input

@@ -1,9 +1,18 @@
 # common settings for testcases in libs
 CONFIG += debug
 
-CPPLIBS=C:/Qt/Qt5.0.2/5.0.2/mingw47_32/lib
-isEmpty( CPPLIBS ) {
-    error("You need to define CPPLIBS environment variable.")
+# place the directory where your library will be compiled and accessed from:
+CPPLIBS=$$PWD/cpplibs
+
+isEmpty(CPPLIBS) {
+    error("You should define CPPLIBS environment variable to point to this location.")
+}
+
+# place directory of Qt library folder
+QTLIBS=C:/Qt/Qt5.0.2/5.0.2/mingw47_32/lib
+
+isEmpty( QTLIBS ) {
+    error("You need to define QTLIBS environment variable(Qt lib folder).")
 }
 
 # place executable in same directory (not a debug/ or release/ folder)
@@ -26,4 +35,4 @@ mac {
     CONFIG -= app_bundle
 }
 
-LIBS += -LC:/Qt/Qt5.0.2/5.0.2/mingw47_32/lib
+LIBS += -L$$QTLIBS

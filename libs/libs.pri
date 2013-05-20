@@ -1,8 +1,8 @@
 # common settings for all libs in this project.
 
 include (common.pri)
-DESTDIR = $$(CPPLIBS)
-LIBS += -L$$(CPPLIBS)
+DESTDIR = $$CPPLIBS
+LIBS += -L$$CPPLIBS
 TEMPLATE = lib
 
 win32 {

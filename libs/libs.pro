@@ -1,8 +1,3 @@
-CPPLIBS=C:\Qt\Qt5.0.2\5.0.2\mingw47_32\lib
-isEmpty(CPPLIBS) {
-    error("You should define CPPLIBS environment variable to point to this location.")
-}
-
 TEMPLATE = subdirs
 # Process directories in order (some are dependent on others):
 CONFIG += ordered
@@ -28,4 +23,4 @@ USE_TAGLIB=$$(USE_TAGLIB)
     SUBDIRS += filetagger
 }
 
-#SUBDIRS += tests
+SUBDIRS += tests
