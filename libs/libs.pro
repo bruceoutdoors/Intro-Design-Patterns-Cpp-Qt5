@@ -12,7 +12,7 @@ SUBDIRS += dataobjects \
            actioneditor \
            icons \
 #           phononmetadata \
-#           sqlmetadata \
+           sqlmetadata \
            docbook \
            cards2 \
            customer \
