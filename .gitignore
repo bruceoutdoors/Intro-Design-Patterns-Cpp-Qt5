@@ -3,3 +3,6 @@
 *.user
 *.o
 build-*/
+*.dll
+*.prl
+*.a

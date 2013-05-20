@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fileprint.xpm</file>
+    </qresource>
+</RCC>
