@@ -16,7 +16,8 @@ InputForm::InputForm(QWidget* parent)
     QSettings s;
     setWindowTitle("QFormlayout demo");
     QVariant v = s.value("color/favorite", QVariant());
-    if (!v.isNull()) m_color = qVariantValue<QColor>(v);
+//    if (!v.isNull()) m_color = qVariantValue<QColor>(v);
+    if (!v.isNull()) m_color = v.value<QColor>();
 
 //start id="form"
     m_name = new QLineEdit;
@@ -56,7 +57,8 @@ InputForm::InputForm(QWidget* parent)
 
 void InputForm::accept() {
     QSettings s;
-    s.setValue("color/favorite", qVariantValue<QColor>(m_color));
+//    s.setValue("color/favorite", qVariantValue<QColor>(m_color));
+    s.setValue("color/favorite", m_color.value());
 
     QDate birthday = m_birthday->date();
     int days = birthday.daysTo(QDate::currentDate());
@@ -75,6 +77,4 @@ void InputForm::updateUi() {
     QPalette p = m_colorButton->palette();
     p.setColor(QPalette::Button, m_color);
     m_colorButton->setPalette(p);
-
-
 }
