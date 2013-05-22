@@ -6,3 +6,6 @@ build-*/
 *.dll
 *.prl
 *.a
+*.Debug
+*.Release
+Makefile
