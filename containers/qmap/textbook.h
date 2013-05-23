@@ -26,13 +26,4 @@ private:
     uint m_YearPub;
 };
 
-/* Managed collection of pointers */
-class TextbookMap : public QMap<QString, Textbook*> {
-  public:
-    ~TextbookMap();
-    /** Adds the TextBook to the map, keyed on the ISBN */
-    void add(Textbook* text);
-    QString toString() const;
-
-};
 #endif
