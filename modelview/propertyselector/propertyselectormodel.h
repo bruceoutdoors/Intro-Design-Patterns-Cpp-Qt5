@@ -6,18 +6,19 @@
 #include <QList>
 #include <QPersistentModelIndex>
 #include <QAbstractListModel>
+#include <QStringListModel>
 #include "dataobject.h"
 
-class PropertySelectorModel : public QAbstractListModel
+class PropertySelectorModel : public QStringListModel
 {
     Q_OBJECT
 
 public:
-    PropertySelectorModel(DataObject* hsrc, QObject* parent = 0);
+    explicit PropertySelectorModel(DataObject* hsrc, QObject* parent = 0);
     void initializePropertyNames();
     QStringList getAllPropertyNames() const;
     int rowCount(const QModelIndex& parent) const;
-    QVariant data(const QPersistentModelIndex &index, int role) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     bool setData(const QModelIndex &index, const QVariant &value, int role);
     Qt::ItemFlags flags(const QModelIndex &index) const;
     bool insertRows(int position, int rows, const QModelIndex &parent);

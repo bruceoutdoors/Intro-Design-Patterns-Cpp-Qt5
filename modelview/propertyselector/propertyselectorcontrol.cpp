@@ -34,7 +34,7 @@ PropertySelectorControl::PropertySelectorControl(DataObject* sourceptr) :
 }
 //end
 void PropertySelectorControl::showWindow(bool) {
-    m_Chdv->clearSelection();
+//    m_Chdv->clearSelection();
     emit readyShow();
     m_Chdv->setVisible(true);
 }

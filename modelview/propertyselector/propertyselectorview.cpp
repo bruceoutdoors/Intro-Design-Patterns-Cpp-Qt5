@@ -1,7 +1,8 @@
 #include "propertyselectorview.h"
+#include <QToolBar>
 
 //start id=constructor
-PropertySelectorView::PropertySelectorView(QAbstractListModel *model, QWidget* parent = 0) :
+PropertySelectorView::PropertySelectorView(QAbstractListModel *model, QWidget* parent) :
 QMainWindow(parent) {
     m_ListView = new QListView(this);
     setCentralWidget(m_ListView);

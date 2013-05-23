@@ -2,9 +2,12 @@
 #include "propertyselectorview.h"
 #include "propertyselectorcontrol.h"
 
+#include <QApplication>
+#include "audiometadata.h"
+
 int main(int argc, char** argv) {
     QApplication qapp(argc, argv);
-    Mp3File* sourceptr = new Mp3File;
+    AudioMetaData* sourceptr = new AudioMetaData();
     PropertySelectorControl* tchd = new PropertySelectorControl(sourceptr);
     tchd->show();
     return qapp.exec();

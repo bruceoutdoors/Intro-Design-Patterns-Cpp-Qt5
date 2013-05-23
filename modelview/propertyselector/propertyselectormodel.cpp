@@ -2,7 +2,7 @@
 
 //start id=pvoverrides
 PropertySelectorModel::PropertySelectorModel(DataObject* hsrc, QObject* parent) :
-QAbstractListModel(parent), m_PropNameSource(hsrc) {
+QStringListModel(parent), m_PropNameSource(hsrc) {
     initializePropertyNames();
 }
 
@@ -19,7 +19,7 @@ int PropertySelectorModel::rowCount(const QModelIndex& parent) const {
     return m_PropertyNames.count();
 }
 
-QVariant PropertySelectorModel::data(const QPersistentModelIndex &index, int role) const {
+QVariant PropertySelectorModel::data(const QModelIndex &index, int role) const {
     if (!index.isValid())
         return QVariant();
     if (role == Qt::DisplayRole)
@@ -72,7 +72,7 @@ bool PropertySelectorModel::removeRows(int position, int rows, const QModelIndex
 //start id=getselects
 QStringList PropertySelectorModel::getSelectedPropertyNames() const {
     QStringList selects;
-    foreach (const QPersistentModelIndex& indx, m_SelectedIndexes)
+    foreach (const QModelIndex& indx, m_SelectedIndexes)
       if (indx.isValid())
           selects << data(indx).toString();
     return selects;

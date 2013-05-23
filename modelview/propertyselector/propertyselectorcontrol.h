@@ -12,7 +12,7 @@ class PropertySelectorControl : public QMainWindow
     Q_OBJECT
 
 public:
-    PropertySelectorControl(DataObject* sourceptr);
+    explicit PropertySelectorControl(DataObject* sourceptr);
     QString getSelectedPropertyNames() const;
 
 public slots:

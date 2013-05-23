@@ -10,12 +10,12 @@
 #include <QObject>
 #include <QAction>
 
-class PropertySelectorView : public QListView
+class PropertySelectorView : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    PropertySelectorView(QAbstractListModel* model, QWidget* parent = 0);
+    explicit PropertySelectorView(QAbstractListModel* model, QWidget* parent = 0);
 
 signals:
     void selectionsMade(QModelIndexList selects);

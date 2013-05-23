@@ -3,11 +3,12 @@
 ######################################################################
 
 include(../../libs/common.pri)
-LIBS += -L$$CPPLIBS -ldataobjects
+LIBS += -L$$CPPLIBS -ldataobjects -lmetadata
 QT += widgets
 TEMPLATE = app
 TARGET = propertyselector
-INCLUDEPATH +=  ../../libs/dataobjects
+INCLUDEPATH +=  ../../libs/dataobjects \
+                ../../libs/metadata
 
 # Input
 SOURCES += propertyselectorcontrol.cpp \
