@@ -1,6 +1,8 @@
-include (../../common.pri)
-include ($$(CPPLIBS)/modeltest/modeltest.pri)
-DEPENDPATH += $$(CPPLIBS)/icons
+include (../../libs/common.pri)
+include (../../libs/modeltest/modeltest.pri)
+
+QT += widgets
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 TEMPLATE = app
 
 # Input
@@ -29,5 +31,5 @@ SOURCES += metadata.cpp \
     timedisplay.cpp \
     sourcelistmodel.cpp \
     playlistsview.cpp
-RESOURCES += $$(CPPLIBS)/icons/icons.qrc
+RESOURCES += ../../libs/icons/icons.qrc
 FORMS += mainwindow.ui

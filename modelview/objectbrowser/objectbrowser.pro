@@ -1,4 +1,4 @@
-
+QT += widgets
 TEMPLATE = app
 HEADERS += ObjectBrowserModel.h
 FORMS += test.ui

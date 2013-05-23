@@ -54,7 +54,7 @@ QVariant MetaDataTableModel::data(const QModelIndex& index, int role) const {
         QSharedPointer<MetaData> p(m_list[r]);
         if (p.isNull()) return QVariant();
         QString propName = m_columnProps[c];
-        return p->property(propName.toAscii());
+        return p->property(propName.toLatin1());
     }
     if (role == Qt::UserRole) {
         QSharedPointer<MetaData> md (m_list[index.row()]);
@@ -98,7 +98,7 @@ bool MetaDataTableModel::setData(const QModelIndex& index,
     int row(index.row()), col(index.column());
     QSharedPointer<MetaData> p = m_list.at(row);
     if (p.isNull()) return false;
-    p->setProperty(m_columnProps.at(col).toAscii(), value);
+    p->setProperty(m_columnProps.at(col).toLatin1(), value);
     emit dataChanged(index, index);
     return true;
 }
