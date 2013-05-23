@@ -1,15 +1,13 @@
 #ifndef PROPERTYSELECTORMODEL_H
 #define PROPERTYSELECTORMODEL_H
 
-#include <QObject>
 #include <QStringList>
 #include <QList>
-#include <QPersistentModelIndex>
 #include <QAbstractListModel>
-#include <QStringListModel>
+
 #include "dataobject.h"
 
-class PropertySelectorModel : public QStringListModel
+class PropertySelectorModel : public QAbstractListModel
 {
     Q_OBJECT
 

@@ -1,5 +1,4 @@
 #include "propertyselectorview.h"
-#include <QToolBar>
 
 //start id=constructor
 PropertySelectorView::PropertySelectorView(QAbstractListModel *model, QWidget* parent) :

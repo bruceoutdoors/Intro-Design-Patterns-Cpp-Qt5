@@ -1,11 +1,11 @@
 #ifndef PROPERTYSELECTORCONTROL_H
 #define PROPERTYSELECTORCONTROL_H
 
-#include "propertyselectormodel.h"
-#include "propertyselectorview.h"
-
 #include <QObject>
 #include <QMainWindow>
+
+#include "propertyselectormodel.h"
+#include "propertyselectorview.h"
 
 class PropertySelectorControl : public QMainWindow
 {

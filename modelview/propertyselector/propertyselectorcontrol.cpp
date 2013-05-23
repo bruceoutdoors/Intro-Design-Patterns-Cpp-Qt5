@@ -1,6 +1,5 @@
 #include "propertyselectorcontrol.h"
 #include <QDebug>
-
 #include <QAction>
 #include <QToolBar>
 

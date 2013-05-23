@@ -2,13 +2,12 @@
 #define PROPERTYSELECTORVIEW_H
 
 #include "propertyselectormodel.h"
-#include <QAbstractListModel>
-#include <QWidget>
-#include <QListView>
 #include <QMainWindow>
+#include <QListView>
 #include <QActionGroup>
-#include <QObject>
-#include <QAction>
+#include <QToolBar>
+
+class QAction;
 
 class PropertySelectorView : public QMainWindow
 {

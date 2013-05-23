@@ -2,7 +2,7 @@
 
 //start id=pvoverrides
 PropertySelectorModel::PropertySelectorModel(DataObject* hsrc, QObject* parent) :
-QStringListModel(parent), m_PropNameSource(hsrc) {
+QAbstractListModel(parent), m_PropNameSource(hsrc) {
     initializePropertyNames();
 }
 
