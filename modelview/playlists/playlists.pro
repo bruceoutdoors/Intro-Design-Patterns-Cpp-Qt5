@@ -1,4 +1,3 @@
-include (../../libs/common.pri)
 include (../../libs/modeltest/modeltest.pri)
 
 QT += widgets
