@@ -1,12 +1,10 @@
-#include "propertyselectormodel.h"
-#include "propertyselectorview.h"
-#include "propertyselectormv.h"
-#include <mp3file.h>
-#include <QApplication>
-#include <QObject>
+#include "propertyselectorcontrol.h"
+#include <QDebug>
+
 #include <QAction>
 #include <QToolBar>
-#include <QDebug>
+
+
 //start id=constructor
 PropertySelectorControl::PropertySelectorControl(DataObject* sourceptr) :
    QMainWindow(0), m_Chdm(new PropertySelectorModel(sourceptr)),
@@ -48,15 +46,4 @@ QString PropertySelectorControl::getSelectedPropertyNames() const {
 void PropertySelectorControl::outputSelects(bool) {
     qDebug() << getSelectedPropertyNames();
 }
-
-
-//start id=testcode
-int main(int argc, char** argv) {
-    QApplication qapp(argc, argv);
-    Mp3File* sourceptr = new Mp3File;
-    PropertySelectorControl* tchd = new PropertySelectorControl(sourceptr);
-    tchd->show();
-    return qapp.exec();
-}
-//end
 

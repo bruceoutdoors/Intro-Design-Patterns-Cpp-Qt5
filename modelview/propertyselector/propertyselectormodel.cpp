@@ -1,10 +1,4 @@
 #include "propertyselectormodel.h"
-#include <dataobject.h>
-#include <QItemSelectionModel>
-#include <QModelIndex>
-#include <QList>
-#include <QDebug>
-#include <QAction>
 
 //start id=pvoverrides
 PropertySelectorModel::PropertySelectorModel(DataObject* hsrc, QObject* parent) :
@@ -25,7 +19,7 @@ int PropertySelectorModel::rowCount(const QModelIndex& parent) const {
     return m_PropertyNames.count();
 }
 
-QVariant PropertySelectorModel::data(const QModelIndex &index, int role) const {
+QVariant PropertySelectorModel::data(const QPersistentModelIndex &index, int role) const {
     if (!index.isValid())
         return QVariant();
     if (role == Qt::DisplayRole)
@@ -39,7 +33,7 @@ QVariant PropertySelectorModel::data(const QModelIndex &index, int role) const {
 //start id=setData
 bool PropertySelectorModel::setData(const QModelIndex &index, const QVariant &value,
                                     int role) {
-    if (index.isValid() && role == EditRole) {
+    if (index.isValid() && role == Qt::EditRole) {
         m_PropertyNames.replace(index.row(), value.toString());
         emit dataChanged(index, index);
         return true;
@@ -47,10 +41,10 @@ bool PropertySelectorModel::setData(const QModelIndex &index, const QVariant &va
     return false;
 }
 
-ItemFlags PropertySelectorModel::flags(const QModelIndex &index) const {
+Qt::ItemFlags PropertySelectorModel::flags(const QModelIndex &index) const {
     if (!index.isValid())
-        return ItemIsEnabled;
-    return QAbstractItemModel::flags(index) | ItemIsEditable;
+        return Qt::ItemIsEnabled;
+    return QAbstractItemModel::flags(index) | Qt::ItemIsEditable;
 }
 //end
 
@@ -86,7 +80,7 @@ QStringList PropertySelectorModel::getSelectedPropertyNames() const {
 //end
 QVariant PropertySelectorModel::headerData(int section, Qt::Orientation orientation,
         int role) const {
-    if (role != DisplayRole)
+    if (role != Qt::DisplayRole)
         return QVariant();
     if (orientation == Qt::Horizontal)
         return QString("Column %1").arg(section);
