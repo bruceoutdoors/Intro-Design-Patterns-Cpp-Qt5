@@ -1,5 +1,7 @@
 include (../common.pri)
 
+QT += widgets
+
 TEMPLATE = app
 
 # Input
