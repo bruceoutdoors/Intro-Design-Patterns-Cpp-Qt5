@@ -54,7 +54,8 @@ void CardDeck::restoreDeck()
     }
     for(int suit = 0; suit < SUIT_NUM; suit++) {
         for(int face = 0; face < FACE_NUM; face++) {
-            Card *card = new Card(face, suit);
+//            Card *card = new Card(face, suit);
+            std::shared_ptr<Card> card(new Card(face, suit));
             this->append(*card);
         }
     }
