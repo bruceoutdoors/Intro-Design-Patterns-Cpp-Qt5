@@ -2,7 +2,7 @@
 
 include (common.pri)
 DESTDIR = $$CPPLIBS
-LIBS += -L$$CPPLIBS
+LIBS += -L$$CPPLIBS -L$$QTLIBS
 TEMPLATE = lib
 
 win32 {
