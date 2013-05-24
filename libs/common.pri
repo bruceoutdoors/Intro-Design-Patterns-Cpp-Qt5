@@ -1,8 +1,18 @@
-# place the directory where your library will be compiled and accessed from:
-CPPLIBS=$$PWD/cpplibs
+# CPPLIBS - the directory where your library will be compiled and accessed from:
+# QTLIBS - place directory of Qt libraries folder
 
-# place directory of Qt library folder
-QTLIBS=C:/Qt/Qt5.0.2/5.0.2/mingw47_32/lib
+win32 {
+    CPPLIBS=$$PWD/cpplibs
+    QTLIBS=C:/Qt/Qt5.0.2/5.0.2/mingw47_32/lib
+
+    isEmpty( QTLIBS ) {
+        error("You need to define QTLIBS environment variable(Qt lib folder).")
+    }
+}
+
+linux-g++ {
+    CPPLIBS=$$PWD/cpplibsLINUX
+ }
 
 # common settings for testcases in libs
 CONFIG += debug
@@ -32,6 +42,3 @@ isEmpty(CPPLIBS) {
     error("You should define CPPLIBS environment variable to point to this location.")
 }
 
-isEmpty( QTLIBS ) {
-    error("You need to define QTLIBS environment variable(Qt lib folder).")
-}
