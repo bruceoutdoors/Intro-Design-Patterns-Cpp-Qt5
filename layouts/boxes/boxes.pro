@@ -1,8 +1,8 @@
-include (../../common.pri)
-
+include (../../libs/common.pri)
+QT += widgets
 TEMPLATE = app
-LIBS += -lcards2 -L$$(CPPLIBS)
-INCLUDEPATH +=  $$(CPPLIBS)/cards2
+LIBS += -lcards2 -L$$CPPLIBS
+INCLUDEPATH += ../../libs/cards2
 
 # Input
 HEADERS += cardtable.h
