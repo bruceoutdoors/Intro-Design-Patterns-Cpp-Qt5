@@ -1,6 +1,6 @@
 include (../../common.pri)
 
-QT       += core gui
+QT       += widgets
 
 TARGET = life
 TEMPLATE = app

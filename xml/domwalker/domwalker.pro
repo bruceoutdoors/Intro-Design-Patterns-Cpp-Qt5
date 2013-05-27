@@ -1,14 +1,16 @@
 # include common qmake settings
-include (../../common.pri)
+include (../../libs/common.pri)
+
+QT += widgets
 
 # this project depends on libdataobjects:
 LIBS += -ldataobjects 
 
 # this directory contains the libraries:
-LIBS += -L$$(CPPLIBS)
+LIBS += -L$$CPPLIBS
 
 # Search here for headers:
-INCLUDEPATH += . $$(CPPLIBS)/dataobjects
+INCLUDEPATH += ../../libs/dataobjects
 
 QT += xml gui
 

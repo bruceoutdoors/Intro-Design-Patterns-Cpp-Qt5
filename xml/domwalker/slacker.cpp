@@ -53,7 +53,7 @@ QDomElement Slacker::visit(QDomElement element) {
         node with the contents of a referenced file */
         QDomNode parent = element.parentNode();
         QString filename = element.attribute("src");
-        FILE* f = fopen(filename.toAscii(), "r");
+        FILE* f = fopen(filename.toLatin1(), "r");
         if (f==0) {
             return element;
         }

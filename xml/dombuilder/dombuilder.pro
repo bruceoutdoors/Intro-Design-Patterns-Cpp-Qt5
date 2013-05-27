@@ -1,10 +1,11 @@
-include (../../common.pri)
+include (../../libs/common.pri)
 
 TEMPLATE = app
 DEPENDPATH += .
-INCLUDEPATH += $$(CPPLIBS)/docbook
+CONFIG += console
+INCLUDEPATH += ../../libs/docbook
 
 QT += xml
 
-LIBS += -ldocbook  -L$$(CPPLIBS)
+LIBS += -ldocbook  -L$$CPPLIBS
 SOURCES += zenflesh.cpp

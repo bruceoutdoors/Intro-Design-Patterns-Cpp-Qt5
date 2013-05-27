@@ -6,13 +6,13 @@ QTextStream cout(stdout);
 
 bool MyHandler::startDocument() {
     indent = "";
-    return TRUE;
+    return true;
 }
 
 bool MyHandler::characters(const QString& text) {
     QString t = text;
     cout << t.remove('\n');
-    return TRUE;
+    return true;
 }
 
 bool MyHandler::startElement( const QString&, /* We have omitted the names of the parameters that we don't use. This prevents the compiler from issuing "unused parameter" warnings. */
@@ -27,14 +27,14 @@ bool MyHandler::startElement( const QString&, /* We have omitted the names of th
     }
     cout << "{";
     indent += "    ";
-    return TRUE;
+    return true;
 }
 
 bool MyHandler::endElement( const QString&,
     const QString& , const QString& ) {
     indent.remove( 0, 4 );
     cout << "}";
-    return TRUE;
+    return true;
 }
 //end
 

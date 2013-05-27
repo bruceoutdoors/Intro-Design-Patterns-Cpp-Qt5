@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "lifemainwindow.h"
 #include "ui_lifemainwindow.h"
 #include "lifewidget.h"

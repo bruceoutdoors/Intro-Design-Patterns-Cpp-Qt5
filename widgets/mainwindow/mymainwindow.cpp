@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include <QDockWidget>
 #include <QTextEdit>
 #include <QStackedWidget>
@@ -62,7 +62,7 @@ bool MyMainWindow::saveAs() {
 	int ret = QMessageBox::warning(this, tr("Application"),
 		tr("File %1 already exists.\n"
 		"Do you want to overwrite it?")
-		.arg(QDir::convertSeparators(fileName)),
+        .arg(QDir::toNativeSeparators(fileName)),
 		QMessageBox::Yes | QMessageBox::Default,
 		QMessageBox::No | QMessageBox::Escape);
         if (ret == QMessageBox::No)
@@ -85,17 +85,17 @@ void MyMainWindow::documentWasModified() {
 /* TODO - show how to get some of the standard icons from QApplication->style() */
 //start id="action"
 void MyMainWindow::createActions() {
-    m_NewAction = new QAction(QIcon(":/icons/new.png"), tr("&New"), this);
+    m_NewAction = new QAction(QIcon(":/icons/document-new.png"), tr("&New"), this);
     m_NewAction->setShortcut(tr("Ctrl+N"));
     m_NewAction->setStatusTip(tr("Create a new file"));
     connect(m_NewAction, SIGNAL(triggered()), this, SLOT(newFile()));
 
-    m_OpenAction = new QAction(QIcon(":/icons/open.png"), tr("&Open..."), this);
+    m_OpenAction = new QAction(QIcon(":/icons/document-open.png"), tr("&Open..."), this);
     m_OpenAction->setShortcut(tr("Ctrl+O"));
     m_OpenAction->setStatusTip(tr("Open an existing file"));
     connect(m_OpenAction, SIGNAL(triggered()), this, SLOT(open()));
 //end
-    m_SaveAction = new QAction(QIcon(":/icons/save.png"), tr("&Save"), this);
+    m_SaveAction = new QAction(QIcon(":/icons/document-save.png"), tr("&Save"), this);
     m_SaveAction->setShortcut(tr("Ctrl+S"));
     m_SaveAction->setStatusTip(tr("Save the document to disk"));
     connect(m_SaveAction, SIGNAL(triggered()), this, SLOT(save()));
@@ -109,17 +109,17 @@ void MyMainWindow::createActions() {
     m_ExitAction->setStatusTip(tr("Exit the application"));
     connect(m_ExitAction, SIGNAL(triggered()), this, SLOT(close()));
 
-    m_CutAction = new QAction(QIcon(":/icons/cut.png"), tr("Cu&t"), this);
+    m_CutAction = new QAction(QIcon(":/icons/edit-cut.png"), tr("Cu&t"), this);
     m_CutAction->setShortcut(tr("Ctrl+X"));
     m_CutAction->setStatusTip(tr("Cut the current selection's contents to the ""clipboard"));
     connect(m_CutAction, SIGNAL(triggered()), m_TextEdit, SLOT(cut()));
 
-    m_CopyAction = new QAction(QIcon(":/icons/copy.png"), tr("&Copy"), this);
+    m_CopyAction = new QAction(QIcon(":/icons/edit-copy.png"), tr("&Copy"), this);
     m_CopyAction->setShortcut(tr("Ctrl+C"));
     m_CopyAction->setStatusTip(tr("Copy the current selection's contents to the ""clipboard"));
     connect(m_CopyAction, SIGNAL(triggered()), m_TextEdit, SLOT(copy()));
 
-    m_PasteAction = new QAction(QIcon(":/icons/paste.png"), tr("&Paste"), this);
+    m_PasteAction = new QAction(QIcon(":/icons/edit-paste.png"), tr("&Paste"), this);
     m_PasteAction->setShortcut(tr("Ctrl+V"));
     m_PasteAction->setStatusTip(tr("Paste the clipboard's contents into the current ""selection"));
     connect(m_PasteAction, SIGNAL(triggered()), m_TextEdit, SLOT(paste()));

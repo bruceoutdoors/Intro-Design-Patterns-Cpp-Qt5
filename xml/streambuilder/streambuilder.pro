@@ -1,4 +1,7 @@
 include (../../common.pri)
+
+QT += widgets
+
 # Input
 SOURCES += main.cpp \
     treebuildermw.cpp \

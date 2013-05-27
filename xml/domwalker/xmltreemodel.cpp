@@ -13,7 +13,7 @@
 
 #include "xmltreemodel.h"
 
-#define ASCII toAscii().data()
+#define ASCII toLatin1().data()
 
 //=============================================
 //                XmlTreeModel
