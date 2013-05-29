@@ -1,7 +1,8 @@
 #include "primeserver.h"
 #include "primethread.h"
 #include "isprime.h"
-#include <QtGui>
+#include <QtWidgets>
+#include <QtConcurrent/QtConcurrent>
 
 PrimeServer::PrimeServer(QObject* parent)
 : QObject(parent), m_concurrent(false) {

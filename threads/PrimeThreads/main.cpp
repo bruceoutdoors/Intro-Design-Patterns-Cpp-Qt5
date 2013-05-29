@@ -1,6 +1,6 @@
 
 
-#include <QtGui>
+#include <QApplication>
 #include "primeserver.h"
 #include "primegui.h"
 

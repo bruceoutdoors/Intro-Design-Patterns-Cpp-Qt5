@@ -1,6 +1,6 @@
 #include "primegui.h"
 #include "ui_primegui.h"
-#include <QtGui>
+#include <QtWidgets>
 #include "primeserver.h"
 PrimeGUI::PrimeGUI(QWidget *parent) :
     QDialog(parent),

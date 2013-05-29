@@ -1,4 +1,9 @@
 include (../../common.pri)
+QT += widgets
+
+TARGET = PrimeThreads
+TEMPLATE = app
+
 CONFIG += debug
 
 HEADERS += \
@@ -16,3 +21,5 @@ SOURCES += \
 
 FORMS += \
     primegui.ui
+
+LIBS += -lQt5Concurrent
