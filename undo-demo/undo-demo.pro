@@ -3,6 +3,8 @@
 # Project created by QtCreator 2010-08-26T18:13:47
 #
 #-------------------------------------------------
+
+QT += widgets
 CONFIG -= app_bundle
 TARGET = undo-demo
 TEMPLATE = app

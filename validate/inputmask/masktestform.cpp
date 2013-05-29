@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "masktestform.h"
 //start
 MaskTestForm::MaskTestForm(): m_InputMask(new QLineEdit), 

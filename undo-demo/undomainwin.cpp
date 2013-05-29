@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 //start
 #include "image-manip.h"
 #include "ui_undomainwin.h"

@@ -1,6 +1,8 @@
 # -------------------------------------------------
 # Project created by QtCreator 2010-12-18T11:23:48
 # -------------------------------------------------
+
+QT += widgets
 TARGET = speed-reader
 TEMPLATE = app
 SOURCES += main.cpp \

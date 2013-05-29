@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "palindate.h"
 #include "palindromeform.h"
 
