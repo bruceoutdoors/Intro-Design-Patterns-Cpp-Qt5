@@ -1,9 +1,9 @@
-include (../common.pri)
+include (../libs/common.pri)
 
-LIBS += -lobjectbrowser -L$$(CPPLIBS)
-INCLUDEPATH += $$(CPPLIBS)/objectbrowser
+LIBS += -lobjectbrowser -L$$CPPLIBS
+INCLUDEPATH += ../libs/objectbrowser
 
-QT       += core gui
+QT       += widgets
 
 #TARGET = events
 TEMPLATE = app
