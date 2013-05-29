@@ -22,7 +22,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
 
     fileNewAction->setStatusTip("new...");
     fileNewAction->setShortcut(tr("Ctrl+N"));
-    connect( fileNewAction, SIGNAL( activated() ) , this,
+    connect( fileNewAction, SIGNAL( triggered() ) , this,
              SLOT( newDoc() ) );
 
     fileOpenAction = new QAction( qApp->style()->standardIcon(QStyle::SP_DirOpenIcon),
@@ -30,7 +30,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
     fileOpenAction->setStatusTip("open");
     fileOpenAction->setShortcut(tr("Ctrl+O"));
 
-    connect( fileOpenAction, SIGNAL( activated() ) , this, SLOT( choose() ) );
+    connect( fileOpenAction, SIGNAL( triggered() ) , this, SLOT( choose() ) );
 
     const char * fileOpenText = "<p><img source=\"fileopen\"> "
                      "Click this button to open a <em>new file</em>. <br>"
@@ -45,7 +45,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
     fileSaveAction->setStatusTip(tr("save file"));
 
 
-    connect( fileSaveAction, SIGNAL( activated() ) , this, SLOT( save() ) );
+    connect( fileSaveAction, SIGNAL( triggered() ) , this, SLOT( save() ) );
 
     const char * fileSaveText = "<p>Click this button to save the file you "
                      "are editing. You will be prompted for a file name.\n"
@@ -57,14 +57,14 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
                                     "Save &As...", this);
     fileSaveAsAction->setStatusTip("Save File As");
 
-    connect( fileSaveAsAction, SIGNAL( activated() ) , this,
+    connect( fileSaveAsAction, SIGNAL( triggered() ) , this,
              SLOT( saveAs() ) );
     fileSaveAsAction->setWhatsThis( fileSaveText );
 
     filePrintAction = new QAction( QIcon(":/fileprint.xpm"), "&Print...", this);
     filePrintAction->setShortcut(tr("Ctrl+p"));
 
-    connect( filePrintAction, SIGNAL( activated() ) , this,
+    connect( filePrintAction, SIGNAL( triggered() ) , this,
              SLOT( print() ) );
 
     const char * filePrintText = "Click this button to print the file you "
@@ -77,7 +77,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
     fileCloseAction->setStatusTip("Close");
     fileCloseAction->setWhatsThis("Close File");
 
-    connect( fileCloseAction, SIGNAL( activated() ) , this,
+    connect( fileCloseAction, SIGNAL( triggered() ) , this,
              SLOT( close() ) );
 
     fileQuitAction = new QAction( qApp->style()->standardIcon(QStyle::SP_DialogCloseButton),"&Quit", this);
@@ -85,7 +85,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
     fileQuitAction->setWhatsThis("quit");
     fileQuitAction->setStatusTip("quit");
     fileQuitAction->setStatusTip(tr("Ctrl+Q"));
-    connect( fileQuitAction, SIGNAL( activated() ) , qApp,
+    connect( fileQuitAction, SIGNAL( triggered() ) , qApp,
              SLOT( closeAllWindows() ) );
 
     // populate a tool bar with some actions
@@ -118,7 +118,7 @@ ApplicationWindow::ApplicationWindow(QWidget* parent)
 
     QAction *editShortcutsAction = new QAction(tr("&Edit Shortcuts"), this);
     editShortcutsAction->setShortcut(tr("Ctrl+Alt+S"));
-    connect(editShortcutsAction, SIGNAL(activated()), this, SLOT(editShortcuts()));
+    connect(editShortcutsAction, SIGNAL(triggered()), this, SLOT(editShortcuts()));
     toolsMenu->addAction(editShortcutsAction);
 
     QAction *objectBrowserAction = new QAction(tr("&Object Browser"), this);
