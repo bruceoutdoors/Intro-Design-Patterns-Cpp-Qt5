@@ -1,6 +1,4 @@
-include (../../common.pri)
-
-QT       += core gui
+QT       += widgets
 
 TARGET = life
 TEMPLATE = app
@@ -15,6 +13,7 @@ HEADERS  += lifemainwindow.h \
 
 FORMS    += lifemainwindow.ui 
 
+LIBS += -lQt5Concurrent
 # CONFIG += mobility
 # MOBILITY = 
 
