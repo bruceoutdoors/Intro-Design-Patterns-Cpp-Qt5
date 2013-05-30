@@ -1,0 +1,1 @@
+be sure to add "canadian-english-small" next to your executable or it won't run
