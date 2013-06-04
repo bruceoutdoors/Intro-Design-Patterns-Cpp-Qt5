@@ -5,14 +5,14 @@
 Card::Card(int faceNbr, int suitNbr)
     : m_FaceNbr(faceNbr), m_SuitNbr(suitNbr){}
 
-QString Card::toString()
+QString Card::toString() const
 {
 //    return getFace() + " " + getSuit();
     return QString("%1 %2").arg(getFace()).arg(getSuit());
 }
 
 // returns value of card based on rules of bridge
-int Card::getValue()
+int Card::getValue() const
 {
     switch(m_FaceNbr) {
         case 10: return 1; // jack
@@ -35,6 +35,6 @@ QStringList Card::s_Faces = QStringList() << "A" << "2" << "3" << "4"
 QStringList Card::s_Suits = QStringList() << "Clubs" << "Diamonds"
                                           << "Hearts" << "Spades";
 
-QString Card::getFace() { return s_Faces[m_FaceNbr]; }
-QString Card::getSuit() { return s_Suits[m_SuitNbr]; }
+QString Card::getFace() const { return s_Faces[m_FaceNbr]; }
+QString Card::getSuit() const { return s_Suits[m_SuitNbr]; }
 

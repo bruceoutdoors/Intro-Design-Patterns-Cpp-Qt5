@@ -7,10 +7,10 @@ class Card
 {
 public:
     Card(int faceNbr, int suitNbr);
-    QString toString();
-    QString getFace();
-    QString getSuit();
-    int getValue();
+    QString toString() const;
+    QString getFace() const;
+    QString getSuit() const;
+    int getValue() const;
 
 private:
     int m_FaceNbr;
