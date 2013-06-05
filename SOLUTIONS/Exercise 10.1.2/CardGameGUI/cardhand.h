@@ -11,6 +11,7 @@ public:
     int getValue();
     ~CardHand();
     QString toString();
+    QList<QLabel*> getLabels();
 
 private:
     bool gotAce;

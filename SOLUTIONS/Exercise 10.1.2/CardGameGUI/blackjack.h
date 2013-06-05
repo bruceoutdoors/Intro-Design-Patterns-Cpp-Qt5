@@ -4,6 +4,8 @@
 #include <QMainWindow>
 class CardDeck;
 class CardHand;
+class QLabel;
+class QGridLayout;
 
 namespace Ui {
 class BlackJack;
@@ -17,6 +19,8 @@ public:
     explicit BlackJack(QWidget *parent = 0);
     ~BlackJack();
     void handOver();
+    // delete and readd images
+    void refreshImages(CardHand *hand, QList<QLabel *> &labels, QGridLayout *layout);
     
 private slots:
     void newGame();
@@ -30,6 +34,8 @@ private:
     CardDeck *deck;
     CardHand *playerHand;
     CardHand *dealerHand;
+    QList<QLabel*> images_player;
+    QList<QLabel*> images_dealer;
 };
 
 #endif // BLACKJACK_H

@@ -2,6 +2,7 @@
 #define CARD_H
 
 #include <QString>
+class QLabel;
 
 class Card
 {
@@ -12,6 +13,7 @@ public:
     QString getSuit() const;
     QString getImage() const;
     int getValue() const;
+    QLabel* getLabel();
 
 private:
     int m_FaceNbr;

@@ -25,6 +25,15 @@ QString CardHand::toString()
     return cards;
 }
 
+QList<QLabel*> CardHand::getLabels()
+{
+    QList<QLabel*> labels;
+    for(Card* card : *this) {
+        labels.append(card->getLabel());
+    }
+    return labels;
+}
+
 CardHand::~CardHand()
 {
     qDeleteAll(*this);

@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>475</width>
-    <height>300</height>
+    <height>325</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>475</width>
-    <height>300</height>
+    <height>325</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -88,7 +88,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
         <property name="spacing">
-         <number>6</number>
+         <number>12</number>
         </property>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1">
@@ -103,21 +103,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QGridLayout" name="layout_dealer">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../../../libs/cards2/cards2.qrc">:/images/cb.png</pixmap>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <layout class="QGridLayout" name="layout_dealer"/>
           </item>
          </layout>
         </item>
@@ -134,21 +120,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QGridLayout" name="layout_player">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_7">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../../../libs/cards2/cards2.qrc">:/images/cb.png</pixmap>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <layout class="QGridLayout" name="layout_player"/>
           </item>
          </layout>
         </item>
@@ -428,8 +400,6 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../../../libs/cards2/cards2.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
