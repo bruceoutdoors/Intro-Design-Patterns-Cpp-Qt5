@@ -1,63 +1,69 @@
 #include "carddeck.h"
 #include <QDebug>
 #include <cstdlib>
-#include <ctime>
+#include <chrono>
 #include <memory>
+#include <algorithm>
+#include <QtAlgorithms>
 
 static int const SUIT_NUM = 4;
 static int const FACE_NUM = 13;
 
 CardDeck::CardDeck()
 {
-    restoreDeck();
+    shuffleDeck();
 }
 
 // random takes out card and returns a hand
-CardHand CardDeck::deal(int handSize)
+CardHand *CardDeck::deal(int handSize)
 {
-    // set seed:
-    srand(time(0));
-
-    std::shared_ptr<CardHand> hand(new CardHand);
-    int randInt;
+    CardHand *hand = new CardHand();
 
     // if we ran out of cards:
-    if(handSize > this->count()) {
+    if(handSize > count()) {
         qDebug() << "\n*~ We're out of cards, restoring deck... ~*\n";
-        restoreDeck();
+        shuffleDeck();
     }
 
     for(int i = 0; i < handSize; i++) {
-        // select an index from deck:
-        randInt = rand() % this->count();
-        // take and remove
-        hand->append((*this)[randInt]);
-        this->removeAt(randInt);
+        // take and remove last item
+        hand->append(last());
+        removeLast();
     }
-    return *hand;
+    return hand;
 }
 
 QString CardDeck::toString()
 {
     QString str;
-    for(Card& card : *this) {
-        str.append(card.toString() + ", ");
+    for(Card *card : *this) {
+        str.append(card->toString() + ", ");
     }
     return str;
 }
 
-void CardDeck::restoreDeck()
+void CardDeck::shuffleDeck()
 {
     // clear deck if it's empty
-    if(!this->isEmpty()) {
-        this->clear();
+    if(!isEmpty()) {
+        // REMEMBER to delete pointers!!! >_<
+        qDeleteAll(*this);
+        clear();
     }
     for(int suit = 0; suit < SUIT_NUM; suit++) {
         for(int face = 0; face < FACE_NUM; face++) {
-            std::shared_ptr<Card> card(new Card(face, suit));
-            this->append(*card);
+            append(new Card(face, suit));
         }
     }
+    // shuffle deck
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::shuffle(begin(), end(), std::default_random_engine(seed));
 }
 
-int CardDeck::getCardsLeft() const { return this->count(); }
+int CardDeck::getCardsLeft() const { return count(); }
+
+CardDeck::~CardDeck()
+{
+    qDeleteAll(*this);
+    clear();
+}

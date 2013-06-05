@@ -5,10 +5,11 @@
 #include <QList>
 #include <card.h>
 
-class CardHand : public QList <Card>
+class CardHand : public QList <Card*>
 {
 public:
     int getValue();
+    ~CardHand();
     QString toString();
 
 private:

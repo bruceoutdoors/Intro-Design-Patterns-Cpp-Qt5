@@ -5,14 +5,15 @@
 #include "cardhand.h"
 #include <QList>
 
-class CardDeck : public QList <Card>
+class CardDeck : public QList <Card*>
 {
 public:
     CardDeck();
-    CardHand deal(int handSize);
+    ~CardDeck();
+    CardHand* deal(int handSize);
     QString toString();
     int getCardsLeft() const;
-    void restoreDeck();
+    void shuffleDeck();
 };
 
 #endif // CARDDECK_H

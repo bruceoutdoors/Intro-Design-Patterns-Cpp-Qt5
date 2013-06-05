@@ -10,6 +10,7 @@ public:
     QString toString() const;
     QString getFace() const;
     QString getSuit() const;
+    QString getImage() const;
     int getValue() const;
 
 private:

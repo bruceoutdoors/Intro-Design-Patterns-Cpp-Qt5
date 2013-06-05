@@ -8,7 +8,7 @@ Card::Card(int faceNbr, int suitNbr)
 QString Card::toString() const
 {
 //    return getFace() + " " + getSuit();
-    return QString("%1 %2").arg(getFace()).arg(getSuit());
+    return QString("%1%2").arg(getFace()).arg(getSuit());
 }
 
 // returns value of card based on rules of bridge
@@ -37,13 +37,18 @@ int Card::getValue() const
     }
 }
 
-QStringList Card::s_Faces = QStringList() << "A" << "2" << "3" << "4"
-                                          << "5" << "6" << "7" << "8"
-                                          << "9" << "T" << "J" << "Q"
-                                          << "K";
+QString Card::getImage() const
+{
+    return QString(":/images/%1.png").arg(toString());
+}
 
-QStringList Card::s_Suits = QStringList() << "Clubs" << "Diamonds"
-                                          << "Hearts" << "Spades";
+QStringList Card::s_Faces = QStringList() << "a" << "2" << "3" << "4"
+                                          << "5" << "6" << "7" << "8"
+                                          << "9" << "t" << "j" << "q"
+                                          << "k";
+
+QStringList Card::s_Suits = QStringList() << "c" << "d"
+                                          << "h" << "s";
 
 QString Card::getFace() const { return s_Faces[m_FaceNbr]; }
 QString Card::getSuit() const { return s_Suits[m_SuitNbr]; }

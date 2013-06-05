@@ -13,8 +13,9 @@ QMAKE_CXXFLAGS += -std=c++11
 SOURCES += carddeck.cpp \
     cardhand.cpp \
     card.cpp \
-    cardgame-client.cpp \
-    blackjack.cpp
+#    cardgame-client.cpp \
+    blackjack.cpp \
+    main.cpp
 
 HEADERS += \
     carddeck.h \
