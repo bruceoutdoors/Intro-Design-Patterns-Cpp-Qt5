@@ -64,6 +64,11 @@ void BlackJack::dealHand()
         dealerHand = nullptr;
     }
 
+    if(deck->count() <= 4) {
+        qDebug() << "insufficient amount of cards...";
+        shuffleDeck();
+    }
+
     playerHand = deck->deal(2);
     dealerHand = deck->deal(2);
 
@@ -84,6 +89,10 @@ void BlackJack::shuffleDeck()
 
 void BlackJack::hitMe()
 {
+    if(deck->count() <= 1) {
+        qDebug() << "insufficient amount of cards...";
+        shuffleDeck();
+    }
     qDebug() << "Adding card...";
     playerHand->append(deck->last());
     deck->removeLast();
