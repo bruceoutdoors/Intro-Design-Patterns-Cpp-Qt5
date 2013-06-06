@@ -19,7 +19,7 @@ public:
     explicit BlackJack(QWidget *parent = 0);
     ~BlackJack();
     void handOver();
-    // delete and readd images
+    // delete and read images
     void refreshImages(CardHand *hand, QList<QLabel *> &labels, QGridLayout *layout);
     
 private slots:

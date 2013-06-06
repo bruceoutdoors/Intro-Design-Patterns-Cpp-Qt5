@@ -125,6 +125,7 @@ void BlackJack::refreshImages(CardHand *hand, QList<QLabel*> &labels, QGridLayou
 {
     if(!labels.isEmpty()) {
         qDeleteAll(labels);
+        labels.clear();
     }
 
     labels = hand->getLabels();
