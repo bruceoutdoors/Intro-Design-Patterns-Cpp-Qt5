@@ -6,6 +6,7 @@ class CardDeck;
 class CardHand;
 class QLabel;
 class QGridLayout;
+class QSpinBox;
 
 namespace Ui {
 class BlackJack;
@@ -18,9 +19,6 @@ class BlackJack : public QMainWindow
 public:
     explicit BlackJack(QWidget *parent = 0);
     ~BlackJack();
-    void handOver();
-    // delete and read images
-    void refreshImages(CardHand *hand, QList<QLabel *> &labels, QGridLayout *layout);
     
 private slots:
     void newGame();
@@ -30,6 +28,11 @@ private slots:
     void stay();
 
 private:
+    void handOver();
+    // delete and read images
+    void refreshImages(CardHand *hand, QList<QLabel *> &labels, QGridLayout *layout);
+    void finalDecision(QString message, QSpinBox *spinbox, int score = 1);
+
     Ui::BlackJack *ui;
     CardDeck *deck;
     CardHand *playerHand;

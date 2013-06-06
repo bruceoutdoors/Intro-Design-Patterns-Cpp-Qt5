@@ -142,59 +142,53 @@ void BlackJack::handOver()
     ui->actionHit_Me->setDisabled(true);
     ui->actionStay->setDisabled(true);
 
-    QMessageBox msgBox;
-
     // if dealer gets 21, dealer wins automatically
     if(dealerHand->getValue() == 21) {
-        msgBox.setText("Dealer gets 21. Dealer wins!");
-        msgBox.exec();
-        ui->sb_dealerScore->setValue(ui->sb_dealerScore->value() + 1);
+        finalDecision("Dealer gets blackjack. Dealer wins!", ui->sb_dealerScore);
         return;
     }
 
     // if player exceeds 21, gets busted and loose
     if(playerHand->getValue() > 21) {
-        msgBox.setText("You exceeded 21 thus have lost!");
-        msgBox.exec();
-        ui->sb_dealerScore->setValue(ui->sb_dealerScore->value() + 1);
-        return;
-    }
-
-    // if dealer exceeds 21, gets busted and loose
-    if(dealerHand->getValue() > 21) {
-        msgBox.setText("Dealer exceeds 21. You win!");
-        msgBox.exec();
-        ui->sb_playerScore->setValue(ui->sb_playerScore->value() + 1);
+        finalDecision("You exceeded 21 thus have lost!", ui->sb_dealerScore);
         return;
     }
 
     // if player gets 21, hits blackjack and wins
     if(playerHand->getValue() == 21) {
-        msgBox.setText("BlackJack! :D");
-        msgBox.exec();
-        ui->sb_playerScore->setValue(ui->sb_playerScore->value() + 1);
+        finalDecision("BlackJack! :D", ui->sb_playerScore);
+        return;
+    }
+
+    // if dealer exceeds 21, gets busted and loose
+    if(dealerHand->getValue() > 21) {
+        finalDecision("Dealer exceeds 21. You win!", ui->sb_playerScore);
         return;
     }
 
     // if player draws 5 cards, wins
     if(playerHand->count() >= 5) {
-        msgBox.setText("5 cards?? You win!");
-        msgBox.exec();
-        ui->sb_playerScore->setValue(ui->sb_playerScore->value() + 1);
+        finalDecision("5 cards?? You win!", ui->sb_playerScore);
         return;
     }
 
     // if dealer >= player, dealer wins
     if(dealerHand->getValue() >= playerHand->getValue()) {
-        msgBox.setText("Dealer hand equal or exceeds player hand. Dealer Wins!");
-        msgBox.exec();
-        ui->sb_dealerScore->setValue(ui->sb_dealerScore->value() + 1);
+        finalDecision("Dealer hand equal or exceeds player hand. Dealer Wins!",
+                       ui->sb_dealerScore);
     } else {
         // if player > dealer, player wins
-        msgBox.setText("Player hand exceeds dealer. Player wins!");
-        msgBox.exec();
-        ui->sb_playerScore->setValue(ui->sb_playerScore->value() + 1);
+        finalDecision("Player hand exceeds dealer. Player wins!",
+                       ui->sb_playerScore);
     }
+}
+
+void BlackJack::finalDecision(QString message, QSpinBox *spinbox, int score)
+{
+    QMessageBox msgBox;
+    msgBox.setText(message);
+    msgBox.exec();
+    spinbox->setValue(spinbox->value() + score);
 }
 
 BlackJack::~BlackJack()
