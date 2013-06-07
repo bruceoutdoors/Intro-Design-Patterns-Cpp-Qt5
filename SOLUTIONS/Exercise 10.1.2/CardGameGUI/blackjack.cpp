@@ -74,8 +74,8 @@ void BlackJack::dealHand()
     playerHand = deck->deal(2);
     dealerHand = deck->deal(2);
 
-    refreshImages(playerHand, images_player, ui->layout_player);
-    refreshImages(dealerHand, images_dealer, ui->layout_dealer);
+    refreshImages(playerHand, ui->layout_player);
+    refreshImages(dealerHand, ui->layout_dealer);
 
     qDebug() << "player hand: " << playerHand->toString();
     qDebug() << QString("dealer hand: %1 thus value of %2")
@@ -103,7 +103,7 @@ void BlackJack::hitMe()
     deck->removeLast();
     qDebug() << "playerHand now has " << playerHand->toString();
     ui->sb_cardsLeft->setValue(deck->getCardsLeft());
-    refreshImages(playerHand, images_player, ui->layout_player);
+    refreshImages(playerHand, ui->layout_player);
 }
 
 void BlackJack::stay()
@@ -116,19 +116,20 @@ void BlackJack::stay()
         deck->removeLast();
     }
     ui->sb_cardsLeft->setValue(deck->getCardsLeft());
-    refreshImages(dealerHand, images_dealer, ui->layout_dealer);
+    refreshImages(dealerHand, ui->layout_dealer);
     handOver();
     ui->actionDeal_Hand->setEnabled(true);
 }
 
-void BlackJack::refreshImages(CardHand *hand, QList<QLabel*> &labels, QGridLayout *layout)
+void BlackJack::refreshImages(CardHand *hand,  QGridLayout *layout)
 {
-    if(!labels.isEmpty()) {
-        qDeleteAll(labels);
-        labels.clear();
+    // delete all items in hand QLayoutGrid
+    while(!layout->isEmpty()) {
+        delete layout->itemAt(0)->widget();
     }
 
-    labels = hand->getLabels();
+    // replaces them with cards from hand
+    QList<QLabel*> labels = hand->getLabels();
     for(int i = 0; i < labels.count(); i++) {
         layout->addWidget(labels[i], i/MAX_COLUMN, i%MAX_COLUMN, 1, 1);
     }

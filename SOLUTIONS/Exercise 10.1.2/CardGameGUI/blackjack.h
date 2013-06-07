@@ -30,15 +30,13 @@ private slots:
 private:
     void handOver();
     // delete and read images
-    void refreshImages(CardHand *hand, QList<QLabel *> &labels, QGridLayout *layout);
+    void refreshImages(CardHand *hand, QGridLayout *layout);
     void finalDecision(QString message, QSpinBox *spinbox, int score = 1);
 
     Ui::BlackJack *ui;
     CardDeck *deck;
     CardHand *playerHand;
     CardHand *dealerHand;
-    QList<QLabel*> images_player;
-    QList<QLabel*> images_dealer;
 };
 
 #endif // BLACKJACK_H
