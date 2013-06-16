@@ -1,5 +1,6 @@
+QT += widgets
 TEMPLATE = app
-TARGET = 
+TARGET = multiview
 DEPENDPATH += .
 INCLUDEPATH += .
 

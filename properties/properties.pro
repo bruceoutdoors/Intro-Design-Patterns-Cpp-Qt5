@@ -1,6 +1,6 @@
 include (../common.pri)
 
-CONFIG += qtestlib
+QT += testlib
 
 TEMPLATE = app
 INCLUDEPATH += .

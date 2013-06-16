@@ -69,7 +69,7 @@ void Customer::setType(QString newType) {           /* Overloaded version
 
     QMetaEnum menum = mp.enumerator();              /* This code gets
            executed each time. */
-    const char* ntyp = newType.toAscii().data();
+    const char* ntyp = newType.toLatin1().data();
     CustomerType theType =
                    static_cast<CustomerType>(menum.keyToValue(ntyp));
     

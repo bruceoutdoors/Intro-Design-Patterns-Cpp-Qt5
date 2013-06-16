@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 //start id=main
 #include "createModel.h"
 

@@ -1,7 +1,8 @@
-include (../../common.pri)
+#include (../../common.pri)
 
+QT += widgets
 TEMPLATE = app
-TARGET = 
+TARGET = filesystem
 DEPENDPATH += .
 INCLUDEPATH += .
 
