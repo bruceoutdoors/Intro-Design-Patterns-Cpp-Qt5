@@ -18,7 +18,7 @@ I also did some of the exercises(for not just the cardgame) and uploaded it.
 Contribute
 -----------
 
-I've yet gone through the entire book so the port is not complete yet. If you're ahead of me or you have have linux/mac compatible patches or you think I could have done better, you could send me pull requests or something like that to suggest changes. Don't let noobness bother you - I'd really love to hear from you! (: 
+<del> I've yet gone through the entire book so the port is not complete yet. </del> If you're ahead of me or you have have linux/mac compatible patches or you think I could have done better, you could send me pull requests or something like that to suggest changes. Don't let noobness bother you - I'd really love to hear from you! (: 
 
 You can also upload answers to the exercises if you want(I'll take them with open arms!! :D)
 
