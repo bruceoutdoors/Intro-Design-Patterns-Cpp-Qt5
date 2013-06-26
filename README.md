@@ -1,7 +1,7 @@
 Qt 5 port - An Introduction to Design Patterns in C++ with Qt(2nd Edition)
 =========
 
-##### the porting is not complete yet(As I have not finished the book)! However you could still download and check it out to save you time figuring why stuffs didn't work
+##### <del> the porting is not complete yet(As I have not finished the book)! However you could still download and check it out to save you time figuring why stuffs didn't work </del>
 
 This is my attempt to port the source code([download it here](http://www.ics.com/designpatterns/dist/src.tar.gz
 )) in the book "[An Introduction to Design Patterns in C++ with Qt(2nd Edition)](http://www.amazon.com/Introduction-Patterns-Prentice-Software-Development/dp/0132826453/)" by Alan Ezust and Paul Ezust [from Qt 4 to Qt 5](http://qt-project.org/wiki/Transition_from_Qt_4.x_to_Qt5), plus a bit of C++11. This repo also adds some files that are missing and required for some of the code to work(for example in /layout/form a main.cpp is missing).
